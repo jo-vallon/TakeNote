@@ -6,7 +6,7 @@
 
     <VerticalStackLayout>
         <SearchBar Margin="5" Placeholder="Search..." x:Name="src_noteName"></SearchBar>
-        <Button x:Name="btn_add" Pressed="btn_add_Pressed" Margin="10" Text="add" VerticalOptions="End"/>
+        <Button x:Name="btn_add" Pressed="btn_add_Pressed" Margin="10" Text="+" VerticalOptions="End"/>
 
         <CollectionView x:Name="lst_notes" EmptyView="You currently have no notes" Margin="10">
             <CollectionView.ItemsLayout>

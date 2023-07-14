@@ -37,13 +37,7 @@ public partial class MainPage : ContentPage
     {
         try
         {
-            userNotes.Add(new NoteDTO("Groceries1", "Get some milk"));
-            userNotes.Add(new NoteDTO("Groceries2", "Get some milk"));
-            userNotes.Add(new NoteDTO("Groceries3", "Get some milk"));
-            userNotes.Add(new NoteDTO("Groceries4", "Get some milk"));
-            userNotes.Add(new NoteDTO("Groceries5", "Get some milk"));
-
-            lst_notes.ItemsSource = userNotes;
+            Navigation.PushAsync(new EditNote());
         }
         catch (Exception ex)
         {

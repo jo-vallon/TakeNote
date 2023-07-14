@@ -51,4 +51,9 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\Service\Service.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Update="EditNote.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	</ItemGroup>
 </Project>
