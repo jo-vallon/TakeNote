@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="TakeNote.MainPage">
+
+    <VerticalStackLayout>
+        <SearchBar Margin="5" Placeholder="Search..." x:Name="src_noteName"></SearchBar>
+        <Button x:Name="btn_add" Pressed="btn_add_Pressed" Margin="10" Text="add" VerticalOptions="End"/>
+
+        <CollectionView x:Name="lst_notes" EmptyView="You currently have no notes" Margin="10">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="3" VerticalItemSpacing="5" HorizontalItemSpacing="5"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Stroke="#27272e" StrokeThickness="2" StrokeShape="RoundRectangle 5" Background="#242429" Padding="5">
+                        <Grid>
+                            <VerticalStackLayout Padding="5">
+                                <Label FontSize="Large" Text="{Binding Title}"/>
+                                <Label FontSize="Medium" Text="{Binding Content}"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+
+</ContentPage>
+
