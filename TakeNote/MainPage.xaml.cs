@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Diagnostics;
+using Service;
 using Service.Models;
 
 namespace TakeNote;
@@ -7,12 +8,12 @@ namespace TakeNote;
 public partial class MainPage : ContentPage
 {
 	public ObservableCollection<NoteDTO> userNotes = new ObservableCollection<NoteDTO>();
+    private APIService _service = new APIService(); 
 
     public MainPage()
 	{
 		InitializeComponent();
 		GetUserNotes();
-
     }
 
 	public async Task GetUserNotes()
@@ -33,11 +34,13 @@ public partial class MainPage : ContentPage
 		}
 	}
 
-    void btn_add_Pressed(System.Object sender, System.EventArgs e)
+    async void btn_add_Pressed(System.Object sender, System.EventArgs e)
     {
         try
         {
-            Navigation.PushAsync(new EditNote());
+            var res = await _service.GetTestInfo();
+            userNotes.Add(new NoteDTO(res, "Get some milk"));
+            //Navigation.PushAsync(new EditNote());
         }
         catch (Exception ex)
         {
